@@ -1,15 +1,79 @@
 {
-  "comment": "Vorschlag-Config. Patricks eigene Suchbegriffe ersetzen diese Liste. Feld 'field' je Suchbegriff: searchTerm (Suche ueber alles), titleExpression (nur Titel), skillExpression (nur Skills).",
   "terms": [
-    { "label": "Sales Strategy", "field": "searchTerm", "expression": "sales strategy" },
-    { "label": "Go-to-Market", "field": "searchTerm", "expression": "go-to-market strategy" },
-    { "label": "B2B Sales", "field": "searchTerm", "expression": "B2B sales" },
-    { "label": "Business Development", "field": "searchTerm", "expression": "business development" },
-    { "label": "Sales Enablement", "field": "searchTerm", "expression": "sales enablement" },
-    { "label": "Lead Generation", "field": "searchTerm", "expression": "lead generation" },
-    { "label": "AI Automation", "field": "searchTerm", "expression": "AI automation" },
-    { "label": "AI Agents", "field": "searchTerm", "expression": "AI agent" },
-    { "label": "Sales Consulting", "field": "searchTerm", "expression": "sales consultant" },
-    { "label": "Vertrieb DE", "field": "searchTerm", "expression": "Vertrieb" }
+    {
+      "label": "GTM Strategy (Boolean)",
+      "field": "searchTerm",
+      "expression": "(go-to-market AND strategy) AND (sales OR marketing OR business OR consulting OR coaching)"
+    },
+    {
+      "label": "Go-to-Market Strategy",
+      "field": "searchTerm",
+      "expression": "go-to-market strategy"
+    },
+    {
+      "label": "Growth Consultant",
+      "field": "titleExpression",
+      "expression": "growth consultant"
+    },
+    {
+      "label": "Business Strategy (Boolean)",
+      "field": "searchTerm",
+      "expression": "(business AND consulting) AND (strategy OR growth)"
+    },
+    {
+      "label": "Positioning Strategy",
+      "field": "searchTerm",
+      "expression": "positioning AND strategy"
+    },
+    {
+      "label": "Value Proposition",
+      "field": "searchTerm",
+      "expression": "value proposition"
+    },
+    {
+      "label": "Market Entry",
+      "field": "searchTerm",
+      "expression": "market entry"
+    },
+    {
+      "label": "Pricing Strategy",
+      "field": "searchTerm",
+      "expression": "pricing strategy"
+    },
+    {
+      "label": "Sales Strategy",
+      "field": "searchTerm",
+      "expression": "sales strategy"
+    },
+    {
+      "label": "B2B Sales",
+      "field": "titleExpression",
+      "expression": "B2B sales"
+    },
+    {
+      "label": "Sales Pitch",
+      "field": "searchTerm",
+      "expression": "sales pitch"
+    },
+    {
+      "label": "Founder Sales",
+      "field": "searchTerm",
+      "expression": "(founder OR founders) AND sales"
+    },
+    {
+      "label": "AI Automation",
+      "field": "searchTerm",
+      "expression": "AI automation"
+    },
+    {
+      "label": "AI Agents",
+      "field": "searchTerm",
+      "expression": "AI agent"
+    },
+    {
+      "label": "Vertrieb DE",
+      "field": "titleExpression",
+      "expression": "Vertrieb"
+    }
   ]
 }
