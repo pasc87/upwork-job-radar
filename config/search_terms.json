@@ -1,0 +1,15 @@
+{
+  "comment": "Vorschlag-Config. Patricks eigene Suchbegriffe ersetzen diese Liste. Feld 'field' je Suchbegriff: searchTerm (Suche ueber alles), titleExpression (nur Titel), skillExpression (nur Skills).",
+  "terms": [
+    { "label": "Sales Strategy", "field": "searchTerm", "expression": "sales strategy" },
+    { "label": "Go-to-Market", "field": "searchTerm", "expression": "go-to-market strategy" },
+    { "label": "B2B Sales", "field": "searchTerm", "expression": "B2B sales" },
+    { "label": "Business Development", "field": "searchTerm", "expression": "business development" },
+    { "label": "Sales Enablement", "field": "searchTerm", "expression": "sales enablement" },
+    { "label": "Lead Generation", "field": "searchTerm", "expression": "lead generation" },
+    { "label": "AI Automation", "field": "searchTerm", "expression": "AI automation" },
+    { "label": "AI Agents", "field": "searchTerm", "expression": "AI agent" },
+    { "label": "Sales Consulting", "field": "searchTerm", "expression": "sales consultant" },
+    { "label": "Vertrieb DE", "field": "searchTerm", "expression": "Vertrieb" }
+  ]
+}
