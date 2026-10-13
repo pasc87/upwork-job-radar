@@ -1,0 +1,36 @@
+name: Upwork Job Radar
+
+on:
+  schedule:
+    # UTC-Stunden 23, 0-5 decken 01:00-06:00 Europe/Berlin im Winter und Sommer ab.
+    # Das Script prueft die Berliner Stunde selbst, daher laeuft nichts ausserhalb des Fensters.
+    - cron: "0 23,0,1,2,3,4,5 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch job postings
+        env:
+          UPWORK_CLIENT_ID: ${{ secrets.UPWORK_CLIENT_ID }}
+          UPWORK_CLIENT_SECRET: ${{ secrets.UPWORK_CLIENT_SECRET }}
+          UPWORK_REFRESH_TOKEN: ${{ secrets.UPWORK_REFRESH_TOKEN }}
+          RADAR_FORCE: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
+        run: python scripts/fetch_jobs.py
+
+      - name: Commit results
+        run: |
+          git config user.name "job-radar-bot"
+          git config user.email "actions@github.com"
+          git add data state
+          git diff --cached --quiet || (git commit -m "radar: new jobs $(date -u +'%Y-%m-%dT%H:%M')Z" && git push)
